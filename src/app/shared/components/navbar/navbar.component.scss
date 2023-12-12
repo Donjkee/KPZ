@@ -1,0 +1,12 @@
+@import "../../../../styles";
+
+.spacer {
+    @include spacing-between
+}
+
+.mat-toolbar {
+    color: $secondary-color;
+}
+.mat-button {
+    color: $secondary-color;
+}

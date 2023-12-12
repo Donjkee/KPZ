@@ -1,0 +1,45 @@
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+/* Custom header cell */
+.custom-header {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Custom data cell */
+.custom-cell {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Custom buttons */
+.custom-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
+
+/* Custom row */
+.custom-row {
+  background-color: #fff;
+}
+
+.custom-row:nth-child(odd) {
+  background-color: #f2f2f2;
+}

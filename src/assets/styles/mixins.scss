@@ -1,0 +1,14 @@
+@mixin button-styles {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+@mixin spacing-between {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+

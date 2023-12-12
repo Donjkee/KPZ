@@ -1,0 +1,49 @@
+
+<h1 mat-dialog-title>Add/edit customer</h1>
+<form [formGroup]="customForm">
+  <div mat-dialog-content>
+    <div class="mb-3">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" required matInput [ngModel]="editedCustomer.name" formControlName="name">
+        <mat-hint align="start" class="form-hint-font-size">{{Constants.inputLengthMessage}}</mat-hint>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'name', 'required')">Name is required</mat-error>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'name', 'maxlength')">Limit exceed</mat-error>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'name', 'pattern')">Accept only letters</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-3">
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input type="text" required matInput [ngModel]="editedCustomer.address" formControlName="address">
+        <mat-hint align="start" class="form-hint-font-size">{{Constants.inputLengthMessage}}</mat-hint>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'address', 'required')">Address is required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-3">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [ngModel]="editedCustomer.email" formControlName="email">
+<!--         <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'gender', 'required')">Email is required</mat-error> -->
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'email', 'maxlength')">Limit exceed</mat-error>
+        <mat-error class="form-hint-font-size" *ngIf="FormsChecker.controlHasError(this.customForm,'email', 'pattern')">Format: name.surname@domen.com</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-3">
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input type="text" required matInput [ngModel]="editedCustomer.phone" formControlName="phone">
+        <mat-hint align="start" class="form-hint-font-size">{{Constants.inputPhoneMessage}}</mat-hint>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'phone', 'required')">Phone is required</mat-error>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'phone', 'minlength')">Min: {{Constants.minPhoneLength}}</mat-error>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'phone', 'maxlength')">Limit exceed</mat-error>
+        <mat-error *ngIf="FormsChecker.controlHasError(this.customForm,'phone', 'pattern')">Accept only letter</mat-error>
+        <mat-error class="form-hint-font-size" *ngIf="FormsChecker.controlHasError(this.customForm,'phone', 'pattern')">Format: 1234567890</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center" mat-dialog-actions>
+    <button mat-raised-button color="accent" type="submit" (click)="onSubmit()">Save</button>
+    <button mat-flat-button (click)="onExit()">Exit</button>
+  </div>
+</form>
